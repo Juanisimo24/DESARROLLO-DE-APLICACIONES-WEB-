@@ -1,3 +1,31 @@
 body {
     margin: 0;
 }
+
+.box {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+}
+
+.box1 {
+    background-color: blue;
+    border: 10px solid black;
+    padding: 20px;
+    top: 0;
+    left: 0;
+}
+
+.box2 {
+    background-color: red;
+    border: 20px solid black;
+    top: 258px;
+    left: 258px;
+}
+
+.box3 {
+    background-color: yellow;
+    border: 10px solid black;
+    top: 497px;
+    left: 497px;
+}

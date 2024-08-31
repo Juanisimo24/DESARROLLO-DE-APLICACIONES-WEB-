@@ -1,3 +1,32 @@
+
 body {
     margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+}
+
+.flag {
+    display: flex;
+    width: 80%;
+    height: 60%;
+    
+}
+
+.flag > div {
+    flex: 1;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.red {
+    background-color: red;
 }
