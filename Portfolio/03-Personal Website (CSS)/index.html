@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Website - CSS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My personal Website</title>
 </head>
 <body>
-  <div>
   <!-- Título principal -->
   <img src="./images/photo.jpg" alt="Your photo" width="150px" style="float: left; margin-right: 20px;"/>
   <h1> Juan Pablo Villaseñor Navares</h1>
   <p><strong> Animator Engineer </strong><br/></p>
   <p><b>Sabino 1954 , Colonia Del Fresno</b>  <i>Guadalajara</i></p>
-  </div>
 
   <!-- Presentación personal -->
-  <div>
+  <section>
     <h2>Presentación</h2>
     <p>Student of Animation Engineer that loves bring the ideas to life.</p>
     <hr/>
     <blockquote>"Destruyes todo lo que tocas, ¿por qué no intentas cambiar algunas cosas?"<br/> --Lilo a Stitch.</blockquote>
     <hr/>
-  </div>
+    <p>These are some of my favorite <a href="destination.html" alt="Link to the destination  ">destination</a>.
+  </section>
+
 
   <!-- Antecedentes -->
-  <div>
+  <section>
     <h2>Background</h2>
       <p>Well, I grew up in a low-income but very loving family. 
       With great effort, I can say that I have achieved great challenges that I have set 
@@ -44,15 +43,15 @@
     <!-- Habilidades -->
     <h3>Skills</h3>
       <ol type="1" >   <!--para cambiar a letras type = "a", que empieze desde un numero start="4"-->
-        <li>Drawing --50%</li>
-        <li>Edit videos --80%</li>
-        <li>Play Guitar --50%</li>
-        <li>Programing --50%</li>
+        <li>Drawing <progress value="50" max="100"></progress> 50%</li>
+        <li>Edit videos <progress value="80" max="100"></progress> 80%</li>
+        <li>Play Guitar <progress value="50" max="100"></progress> 50%</li>
+        <li>Programming <progress value="50" max="100"></progress> 50%</li>
       </ol>
-    </div>
+  </section>
 
   
-  <div>
+  <section>
     <!-- Pasatiempos -->
     <h2>Hobbies</h2>
     <ul>
@@ -61,9 +60,6 @@
        <li>Play Video Games</li>
        <li>Drawing</li>
     </ul>
-  </div> 
-
-  <div> 
     <!-- Comida favorita -->
     <h3>Favorite food</h3>
     <p>Top 5</p>
@@ -81,16 +77,13 @@
        <li>Russian</li>
        <li>French</li>
     </ol>
-  </div> 
-
-  <div> 
    <!-- Libros, Películas y Series -->
     <h3>Books, Movies & TV Shows</h3>
     <ul>
      <li>
         <span>Books</span>
-        <img src="images/harry-potter.jpg" alt="Books" />
         <ol>
+          <img src="images/harry-potter.jpg" alt="Books" width="150px" />
             <li>Harry Potter</li>
             <li>TrollHunters</li>
             <li>Sandman</li>
@@ -98,8 +91,8 @@
      </li>
      <li>
         <span>Movies</span>
-        <img src="images/HTTYD.jpg" alt="Movies" />
         <ol>
+          <img src="images/HTTYD.jpg" alt="Movies" width="150px"/>
             <li>How to Train Your Dragon</li>
             <li>How to Train Your Dragon 2</li>
             <li>How to Train Your Dragon 3</li>
@@ -107,55 +100,126 @@
     </li>
     <li>
         <span>TV Shows</span>
-        <img src="images/teen_wolf.jpg" alt="TV Shows" />
         <ol>
+          <img src="images/teen_wolf.jpg" alt="TV Shows" width="150px" />
             <li>Teen Wolf</li>
             <li>Dexter</li>
             <li>The Big Bang Theory</li>
         </ol>
     </li>
    </ul>
-  </div>
+  </section>
 
-  <!--Birthday of my family-->
-  <div id="bdays">
-    <h2>Family birthdays</h2>
+  <!-- heroes, musicos,etc-->
+  <section>
+    <h2>Heroes/Writers/Musicians</h2>
     <table border="1">
-     <thead>
-         <tr>
-             <th>Firstname</th>
-             <th>Lastname</th>
-             <th>Birthday</th>
-         </tr>
-     </thead>
-     <tbody>
-         <tr>
-             <td>Fabiola</td>
-             <td>Villaseñor</td>
-             <td>September 30th</td>
-         </tr>
-         <tr>
-             <td>Eliseo</td>
-             <td>Villaseñor</td>
-             <td>October 3rd</td>
-         </tr>  
-     </tbody>
-     <tfoot>
-         <tr>
-             <td colspan="2"></td>
-             <td>2 people</td>
-         </tr>
-     </tfoot>
-     <caption>Table of Birthdays</caption>
+      <tr>
+        <th>Picture</th>
+        <th>Name</th>
+        <th>Date of Birth/Death</th>
+        <th>Profession</th>
+        <th>Achievements</th>
+      </tr>
+      <tr>
+        <td><img src="images/IZUKU.png" alt="IZUKU" width="100px"></td>
+        <td>Izuku Midoriya</td>
+        <td> July 15 - Alive</td>
+        <td>Super-hero</td>
+        <td>Pro Hero</td>
+      </tr>
+      <tr>
+        <td><img src="images/Ed-Sheeran.jpg" alt="Ed-Sheeran" width="100px"></td>
+        <td>Edward Christopher Sheeran</td>
+        <td>February 17 - Alive</td>
+        <td>Musician</td>
+        <td>PoPStart</td>
+      </tr>
+      <tr>
+        <td><img src="images/Guillermo_del_Toro.jpg" alt="Guillermo del Toro" width="100px"></td>
+        <td>Guillermo del Toro Gómez</td>
+        <td>October 9 - Alive</td>
+        <td>Film director, screenwriter, film producer</td>
+        <td>Film director</td>
+      </tr>
     </table>
-  </div>
+  </section>
 
-  <!--Agenda-->
-  <div>
-    <h2>Agenda</h2>
+  <!--Horario semanal -  forms-->
+  <section>
+    <h2>Weekly Schedule</h2>
+    <table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Description</th>
+            <th>Place</th>
+            <th>Type</th>
+            <th>Notes</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>2024-09-01</td>
+            <td>09:00</td>
+            <td>10:00</td>
+            <td>Meeting with team</td>
+            <td>Office</td>
+            <td>Professional</td>
+            <td>Discuss project progress</td>
+            <td><img src="images/busy.png" alt="Busy" width="50px"></td>
+        </tr>
+        <tr>
+            <td>2024-09-02</td>
+            <td>11:00</td>
+            <td>12:00</td>
+            <td>Study session</td>
+            <td>Library</td>
+            <td>School</td>
+            <td>Prepare for exams</td>
+            <td><img src="images/Free.png" alt="Free" width="50px"></td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Register Weekly Schedule</h2>
     <form>
-      <input type="color"/>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date"><br><br>
+        <hr>
+        <label for="start">Time Start:</label>
+        <input type="time" id="start" name="start"><br><br>
+        <hr>
+        <label for="end">Time End:</label>
+        <input type="time" id="end" name="end"><br><br>
+        <hr>
+        <label for="activity">Activity:</label>
+        <input type="text" id="activity" name="activity"><br><br>
+        <hr>
+        <label for="place">Place:</label>
+        <input type="text" id="place" name="place"><br><br>
+        <hr>
+        <label for="type">Type:</label>
+        <select id="type" name="type">
+            <option value="school">School</option>
+            <option value="personal">Personal</option>
+            <option value="professional">Professional</option>
+            <option value="familiar">Familiar</option>
+            <option value="other">Other</option>
+        </select><br><br>
+        <hr>
+        <label for="notes">Notes:</label>
+        <textarea id="notes" name="notes"></textarea><br><br>
+        <hr>
+        <label for="flag">Flag:</label>
+        <input type="color" id="flag" name="flag"><br><br>
+        <hr>
+        <label for="freebusy">Free/Busy:</label>
+        <input type="checkbox" id="freebusy" name="freebusy"> Busy<br><br>
+        <hr>
+        <input type="submit" value="Submit">
     </form>
-  </div>
+</section>
+
+  
 </body>
 </html>
