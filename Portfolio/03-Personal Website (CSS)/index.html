@@ -8,13 +8,24 @@
 
 </head>
 <body>
+  <!-- Montaña y Nubes -->
+  <div class="scene">
+    <img src="./images/cloud.png" class="cloud cloud1">
+    <img src="./images/mountain.png" class="mountain">
+    <img src="./images/cloud.png"  class="cloud cloud2">
+    </div>
+
   <!-- Título principal -->
+   <div>
   <img src="./images/photo.jpg" alt="Your photo" width="150px" style="float: left; margin-right: 20px;"/>
-  <h1> Juan Pablo Villaseñor Navares</h1>
+  <h1> Juan Pablo Villaseñor Navares</h1><br>
   <p><strong> Animator Engineer </strong><br/></p>
   <p><b>Sabino 1954 , Colonia Del Fresno</b>  <i>Guadalajara</i></p>
+  </div>
+
 
   <!-- Presentación personal -->
+   <div class ="section">
   <section>
     <h2>Presentación</h2>
     <p>Student of Animation Engineer that loves bring the ideas to life.</p>
@@ -23,9 +34,10 @@
     <hr/>
     <p>These are some of my favorite <a href="destination.html" alt="Link to the destination  ">destination</a>.
   </section>
-
+  </div>
 
   <!-- Antecedentes -->
+  <div class="section even-section">
   <section>
     <h2>Background</h2>
       <p>Well, I grew up in a low-income but very loving family. 
@@ -51,10 +63,11 @@
         <li>Programming <progress value="50" max="100"></progress> 50%</li>
       </ol>
   </section>
+  </div>
 
-  
+  <!-- Pasatiempos -->
+  <div class="section">
   <section>
-    <!-- Pasatiempos -->
     <h2>Hobbies</h2>
     <ul>
        <li>Play Guitar</li>
@@ -111,43 +124,62 @@
     </li>
    </ul>
   </section>
-
-  <!-- heroes, musicos,etc-->
+  </div>
+  
+  <!-- Meet the Team -->
+  <div class="section even-section">
   <section>
-    <h2>Heroes/Writers/Musicians</h2>
-    <table border="1">
-      <tr>
-        <th>Picture</th>
-        <th>Name</th>
-        <th>Date of Birth/Death</th>
-        <th>Profession</th>
-        <th>Achievements</th>
-      </tr>
-      <tr>
-        <td><img src="images/IZUKU.png" alt="IZUKU" width="100px"></td>
-        <td>Izuku Midoriya</td>
-        <td> July 15 - Alive</td>
-        <td>Super-hero</td>
-        <td>Pro Hero</td>
-      </tr>
-      <tr>
-        <td><img src="images/Ed-Sheeran.jpg" alt="Ed-Sheeran" width="100px"></td>
-        <td>Edward Christopher Sheeran</td>
-        <td>February 17 - Alive</td>
-        <td>Musician</td>
-        <td>PoPStart</td>
-      </tr>
-      <tr>
-        <td><img src="images/Guillermo_del_Toro.jpg" alt="Guillermo del Toro" width="100px"></td>
-        <td>Guillermo del Toro Gómez</td>
-        <td>October 9 - Alive</td>
-        <td>Film director, screenwriter, film producer</td>
-        <td>Film director</td>
-      </tr>
-    </table>
+  <h2>Meet the Team</h2>
+  <p>Get to know our awesome team members!</p>
+  
+  <div class="row">
+    <!-- Member 1 -->
+    <div class="column">
+      <div class="card">
+        <img src="./images/IZUKU.png" alt="DEKU" style="width:100%">
+        <div class="container">
+          <h2>Izuku Midoriya</h2>
+          <p class="title">SuperHero</p>
+          <p>"A superhero who never gives up and always gives 120%"</p>
+          <p>DEKU@UA.edu.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Member 2 -->
+    <div class="column">
+      <div class="card">
+        <img src="./images/Ed-Sheeran.jpg" alt="Ed" style="width:100%">
+        <div class="container">
+          <h2>Ed Sheeran</h2>
+          <p class="title">Musician</p>
+          <p>The best composer and singer-songwriter of the 2000s</p>
+          <p>TheEddySheeran@servis.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Member 3 -->
+    <div class="column">
+      <div class="card">
+        <img src="./images/Guillermo_del_Toro.jpg" alt="Carlos" style="width:100%">
+        <div class="container">
+          <h2>Guillermo Del Toro</h2>
+          <p class="title">Film director</p>
+          <p>The horror expert, with a unique vision of terror, the best director of terrifying science fiction</p>
+          <p>DelToro@yahoo.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
   </section>
+  </div>
 
   <!--Horario semanal -  forms-->
+  <div class="section"></div>
   <section>
     <h2>Weekly Schedule</h2>
     <table border="1">
@@ -210,7 +242,7 @@
         </select><br><br>
         <hr>
         <label for="notes">Notes:</label>
-        <textarea id="notes" name="notes"></textarea><br><br>
+        <textarea id="notes" name="notes" rows = "3"></textarea><br><br>
         <hr>
         <label for="flag">Flag:</label>
         <input type="color" id="flag" name="flag"><br><br>
@@ -221,7 +253,6 @@
         <input type="submit" value="Submit">
     </form>
 </section>
-
-  
+</div>
 </body>
 </html>
