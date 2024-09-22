@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    
+
+        <!-- 1.- NAVBAR -->
+         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"> 
+                <img src ="images/capybara.png" alt="Logo" height="50px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class ="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class ="navbar-nav">
+                    <li class="nav-item" style="font-family: 'Roboto', sans-serif;">
+                        <a class ="nav-link " aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item" style="font-family: 'Roboto', sans-serif;">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item"  style="font-family: 'Roboto', sans-serif;">
+                        <a class="nav-link" href="#">Frase</a>
+                    </li>
+                </ul>
+            </div>
+         </nav>
+
+         <hr class="m-0"><br/>
+
+         <h1 class="text-center bg-primary-subtle text-primary m-0 rounded-pill" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Bienvenido Capibara-Center</h1><br/>
+
+        <!-- Sección Accordeon -->
+         <div>
+            <div class="container">
+            <h2 class="text-center bg-info text-white m-0 rounded-pill" style="font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;">Accordeon</h2><br/>
+            </div>
+         </div>
+ 
+         <!-- 2.- Acordeon -->
+        <div class="container">
+         <div class="accordion" id="accordionExample">
+            <div class="accordion-item bg-warning">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed bg-warning-subtle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Home
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body text-white text-center">
+                        Hi World.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item  bg-danger">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed bg-danger-subtle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Features
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body  text-white text-center">
+                        Hello visitor.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item  bg-success">
+
+                <h2 class="accordion-header" id="headingTree">
+                    <button class="accordion-button collapsed bg-success-subtle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTree" aria-expanded="false" aria-controls="collapseTree">
+                        Frase
+                    </button>
+                </h2>
+                <div id="collapseTree" class="accordion-collapse collapse" aria-labelledby="headingTree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body text-white  text-center" style="font-family: 'Century Gothic', sans-serif;">
+                        <blockquote class="blockquote">
+                        The greatest declaration of love is the one that is not made.
+                        </blockquote> 
+                        <figcaption class="blockquote-footer text-white">
+                           <cite title="Source Title">Platón</cite>
+                          </figcaption>
+                    </div>
+                </div>
+            </div>
+         </div>
+        </div><br/>
+
+
+        <div class="container">
+            <!-- Sección Few Buttons -->
+            <div class="float-start" style="width: 45%;">
+                <div class="container">
+                    <h2 class="text-center bg-info-subtle text-dark m-0 rounded-pill" style="font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;">Few Buttons</h2><br/>
+                </div>
+        
+                <!-- 3.- Algunos Botones -->
+                <div>
+                    <div class="d-grid gap-1 col-12">
+                        <button type="button" class="btn btn-primary">Primary button</button>
+                    </div>
+        
+                    <div class="d-grid gap-1 col-12">
+                        <button type="button" class="btn btn-secondary">Secondary button</button>
+                    </div>
+        
+                    <div class="d-grid gap-1 col-12">
+                        <button type="button" class="btn btn-success">Success button</button>
+                    </div>
+        
+                    <div class="d-grid gap-1 col-12">
+                        <button type="button" class="btn btn-danger">Danger button</button>
+                    </div>
+        
+                    <div class="d-grid gap-1 col-12">
+                        <button type="button" class="btn btn-warning">Warning button</button>
+                    </div>
+        
+                    <div class="d-grid gap-1 col-12">
+                        <button type="button" class="btn btn-info">Info button</button>
+                    </div>
+        
+                    <div class="d-grid gap-1 col-12">
+                        <button type="button" class="btn btn-light">Light button</button>
+                    </div>
+        
+                    <div class="d-grid gap-1 col-12">
+                        <button type="button" class="btn btn-dark">Dark button</button>
+                    </div>
+        
+                    <div class="d-grid gap-1 col-12">
+                        <button type="button" class="btn btn-transparent">Transparent button</button>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Sección Group of Buttons -->
+            <div class="float-end" style="width: 45%;">
+                <div class="container">
+                    <h2 class="text-center bg-warning-subtle text-dark m-0 rounded-pill" style="font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;">Buttons Group</h2><br/>
+                </div>
+        
+                <!-- 3.- Fila de Botones -->
+                <div class="container text-center">
+                    <div class="btn-group" role="group" aria-label="Basic example" style="font-family: 'Times New Roman', sans-serif;">
+                        <button type="button" class="btn btn-dark">Izquierda</button>
+                        <button type="button" class="btn btn-info">Centro</button>
+                        <button type="button" class="btn btn-danger">Derecha</button>
+                    </div>
+                </div>
+            </div>
+        </div><br/>
+
+        <!-- clearfix para limpiar los floats -->
+       <div class="clearfix"></div>
+
+
+        <!-- Sección Card -->
+        <br/><div>
+            <div class="container">
+            <h2 class="text-center bg-dark text-white m-0 rounded-pill" style="font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;">Card and Modal</h2><br/>
+            </div>
+         </div><br/>
+        
+
+        <!-- 4.- Card -->
+        <div class="container">
+            <div class="row justify-content-center">
+              <div class="card" style="width: 18rem;">
+               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Hydrochoeris_hydrochaeris_in_Brazil_in_Petr%C3%B3polis%2C_Rio_de_Janeiro%2C_Brazil_09.jpg/1024px-Hydrochoeris_hydrochaeris_in_Brazil_in_Petr%C3%B3polis%2C_Rio_de_Janeiro%2C_Brazil_09.jpg" class="card-img-top" alt="Image of Capybara">
+              <div class="card-body">
+                <h5 class="card-title" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">The Capybara:</h5>
+                <p class="card-text">Is the largest living rodent.</p>
+                <div class="d-flex justify-content-center">
+                    <!-- 5.- Botón para abrir el modal -->
+
+                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Learn More
+                    </button>
+
+                    <!-- 6.- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">The Capybara:</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Native to South America. It is a member of the genus Hydrochoerus. 
+                            The only other extant member is the lesser capybara (Hydrochoerus isthmius). 
+                            Its close relatives include guinea pigs and rock cavies, and it is more distantly related to the agouti, the chinchilla, and the nutria. 
+                            The capybara inhabits savannas and dense forests, and lives near bodies of water. 
+                            It is a highly social species and can be found in groups as large as 100 individuals, but usually live in groups of 10–20 individuals. 
+                            The capybara is hunted for its meat and hide and also for grease from its thick fatty skin.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success">Nothing</button>
+                        </div>
+                    </div>
+                    </div>
+                    </div><br/>
+                    
+                </div>
+               </div>
+              </div>
+            </div>
+        </div>
+
+       
+        <!-- Sección Pop over y tooltips -->
+        <br/><div>
+            <div class="container">
+              <h2 class="text-center bg-success-subtle text-success m-0 rounded-pill" style="font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;">Pop over and Tooltips</h2><br/>
+            </div>
+           </div><br/>
+
+        <!-- 7.- Popover y Tooltips -->
+        <div class="container">
+          <div class="float-start" style="width: 45%;">
+            <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-Lg btn-outline-success" data-bs-toggle="popover" data-bs-title="Capybara-Center" data-bs-content="Have a Great Day">Popover</button>
+            </div>
+          </div>
+
+          <div class="float-end" style="width: 45%;">
+            <div class="d-flex justify-content-center">
+             <button type="button" class="btn btn-outline-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Capybara-Center">Tooltip</button>
+            </div><br/>
+
+            <div class="container text-center"> 
+            <p>
+             Hello to the <span class="text-center text-success" data-bs-toggle="tooltip" title="Hello, have a nice day"style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Capybaras</span>.
+            </p>
+            </div>
+          </div>
+        </div>
+
+       <!-- clearfix para limpiar los floats -->
+       <div class="clearfix"></div><br/>
+       
+       <!-- Sección Progres and Spinner-->
+        <br/><div>
+            <div class="container">
+              <h2 class="text-center bg-danger-subtle text-danger m-0 rounded-pill" style="font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;">Progress and Spinner</h2><br/>
+            </div>
+        </div>
+
+        <!-- 8.- Progress y Spinner -->
+        <div class="container">
+            <h3 class="text-center text-danger">Loading</h3><br>
+         <div class="progress">
+            <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated " role="progressbar" aria-label="Animated striped example" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+         </div><br/>
+
+         <div class="d-flex align-items-center text-danger">
+          <strong role="status ">Loading...</strong>
+
+         <!-- Spinner 1-->
+         <div class="spinner-border ms-auto text-danger" style="width: 3rem; height: 3rem;" role="status" aria-hidden="true">
+            <span class="visually-hidden">Cargando...</span>
+         </div>
+
+         <!-- Spinner 2-->
+         <div class="spinner-grow text-danger" style="width: 3rem; height: 3rem;" role="status" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+         </div>
+        </div>
+
+        <!-- Iconic Link y Floating labels-->
+        <br/><div>
+            <div class="container">
+              <h2 class="text-center bg-info-subtle text-info m-0 rounded-pill" style="font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;">Iconic Link y Floating labels</h2><br/>
+            </div>
+        </div>
+        
+        
+        <!-- 9.- iconic link y floating labels -->
+        <div class="container text-center">
+         <a href="#" class="btn btn-outline-info text-info-subtle">
+            <i class="bi bi-house"></i> Iconic link
+         </a><br/>
+        
+         <br/><form>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email</label>
+            </div>
+         </form>
+        </div>
+
+        <!-- Borders & Background-->
+        <br/><div>
+            <div class="container">
+              <h2 class="text-center bg-primary-subtle text-primary m-0 rounded-pill" style="font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;">Borders & Background</h2><br/>
+            </div>
+        </div>
+
+        <!-- 10.- Borders & Background -->
+        <div class="container">
+         <div class="p-3 mb-2 bg-primary text-white m-0 rounded-pill">Primary Background</div>
+         <div class="border border-primary p-3 m-0 rounded-pill">Primary Border</div>
+        </div>
+        
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzWk5y8fIW6QXQKoV8y1RwPp2tkaWcZOugDe+zc/2pO1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script> //Popover
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+          return new bootstrap.Popover(popoverTriggerEl);
+        });
+    </script>
+    <script>
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl)
+            })
+        
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>
