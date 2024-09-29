@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My personal Website_demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body  class="text-center " style="background-color:  #8a5cd4;">
+
+    <!-- Collapsible Sidebar -->
+    <div class="d-flex">
+        <div class="bg-dark text-white" id="sidebar" style="min-width: 250px; display: none;">
+            <ul class="nav flex-column p-3">
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link text-white">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link text-white">
+                        <i class="fas fa-user"></i> About
+                    </a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link text-white">
+                        <i class="fas fa-briefcase"></i> Portfolio
+                    </a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link text-white">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+     <!-- Main content -->
+     <div class="flex-grow-1">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg" style="background-color: #422c67;">
+            <div class="container-fluid">
+                <!-- Toggle button for sidebar -->
+                <button class="btn btn-dark" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Navbar brand -->
+                <a class="navbar-brand ms-2" href="#">
+                    <img src="./images/cloud.png" class="cloud" height="16" alt="cloud Logo" loading="lazy" style="margin-top: -1px;"/>
+                    <img src="./images/mountain.png" class="mountain" height="30" alt="mountain Logo" loading="lazy" style="margin-top: -1px;"/>
+                    <img src="./images/cloud.png" class="cloud" height="16" alt="cloud Logo" loading="lazy" style="margin-top: -1px;"/>
+                </a>
+
+                <!-- Right-aligned elements -->
+                <div class="ms-auto d-flex align-items-center">
+                    <!-- Dark mode button -->
+                    <button id="colorModeToggle" class="btn btn-outline-dark me-3">
+                        <img src="./images/moon.png" height="30" alt="Dark Mode" loading="lazy" />
+                    </button>
+                    
+                    <!-- Dropdown with icon -->
+                    <div class="dropdown">
+                        <button class="btn btn-outline-info dropdown-toggle me-3" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-cog"></i> 
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-envelope"></i> Messages</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Search form -->
+                    <form class="d-flex me-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-info" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+
+                    
+                </div>    
+            </div>
+        </nav>
+
+
+
+     <!-- Título principal -->
+     <div class="container my-4 text-start text-white">
+       <div class="d-flex align-items-start">
+        <img src="./images/photo.jpg" alt="Your photo" class="rounded-circle me-4" width="150px">
+        <div>
+            <h1 class="display-4">Juan Pablo Villaseñor Navares</h1>
+            <p class="fs-5 fw-bold">Animator Engineer</p>
+            <p>Sabino 1954, Colonia Del Fresno, <i>Guadalajara</i></p>
+        </div>
+       </div>
+     </div>
+
+     <!-- Presentación personal -->
+     <div class="container my-4 text-white">
+        <section>
+         <h2 class="h2 text-white">Presentation</h2>
+         <p>Student of Animation Engineer that loves bringing ideas to life.</p>
+         <hr>
+          <blockquote class="blockquote">"Destruyes todo lo que tocas, ¿por qué no intentas cambiar algunas cosas?"<br> --Lilo a Stitch.</blockquote>
+         <hr>
+         <p>These are some of my favorite <a href="destination.html">destination</a>.</p>
+        </section>
+     </div>
+
+      <!-- Antecedentes -->
+      <div class="container my-4 p-4 border rounded" style="background-color: #3d2563;">
+       <section>
+        <h2>Background</h2>
+        <p>Well, I grew up in a low-income but very loving family.
+            With great effort, I can say that I have achieved great challenges that I have set 
+         for myself in life. I am currently studying what I am passionate about, which is animation, 
+         with the vision of being one of the best animators or visual effects artists in Mexico.
+        </p>
+
+        <h3>Education</h3>
+        <ul class="list-unstyled">
+            <li><em>2005-2007:</em><b> Kinder - DE ALMA</b></li>
+            <li><em>2008-2014:</em><b> Primary - Colegio Oxford</b> <img src="./images/oxford.jpg" alt="Logo of Colegio Oxford" width="50px"></li>
+            <li><em>2015-2018:</em><b> Secondary - Colegio de Fatima</b> <img src="./images/CDF.jpeg" alt="Logo of Colegio de Fatima" width="50px"></li>
+            <li><em>2019-2022:</em><b> High School - UTEG</b> <img src="./images/uteg.jpeg" alt="Logo of Uteg" width="50px"></li>
+            <li><em>2022-2024:</em><b> University - Universidad Panamericana</b> <img src="./images/UP.jpg" alt="Logo of UP" width="50px"></li>
+        </ul>
+
+        <h3>Skills</h3>
+        <ol class="list-unstyled">
+            <li>Drawing <progress value="50" max="100"></progress> 50%</li>
+            <li>Edit videos <progress value="80" max="100"></progress> 80%</li>
+            <li>Play Guitar <progress value="50" max="100"></progress> 50%</li>
+            <li>Programming <progress value="50" max="100"></progress> 50%</li>
+        </ol>
+       </section>
+      </div>
+
+
+     <!-- Pasatiempos -->
+     <div class="container my-4">
+      <section>
+       <h2>Hobbies</h2>
+        <ul>
+          <li>Play Guitar</li>
+          <li>Play Ukulele</li>
+          <li>Play Video Games</li>
+          <li>Drawing</li>
+        </ul>
+
+      <h3>Favorite Food</h3>
+      <p>Top 5</p>
+      <ol>
+          <li>Mexican</li>
+          <li>Italian</li>
+          <li>Japanese</li>
+          <li>Chinese</li>
+          <li>Arabian</li>
+      </ol>
+
+      <p>Bottom 3</p>
+      <ol>
+          <li>Indian</li>
+          <li>Russian</li>
+          <li>French</li>
+      </ol>
+
+      <h3>Books, Movies & TV Shows</h3>
+      <ul>
+          <li>Books
+              <ol>
+                  <img src="images/harry-potter.jpg" alt="Books" width="150px">
+                  <li>Harry Potter</li>
+                  <li>TrollHunters</li>
+                  <li>Sandman</li>
+              </ol>
+          </li>
+          <li>Movies
+              <ol>
+                  <img src="images/HTTYD.jpg" alt="Movies" width="150px">
+                  <li>How to Train Your Dragon</li>
+                  <li>How to Train Your Dragon 2</li>
+                  <li>How to Train Your Dragon 3</li>
+              </ol>
+          </li>
+          <li>TV Shows
+              <ol>
+                  <img src="images/teen_wolf.jpg" alt="TV Shows" width="150px">
+                  <li>Teen Wolf</li>
+                  <li>Dexter</li>
+                  <li>The Big Bang Theory</li>
+              </ol>
+          </li>
+      </ul>
+      </section>
+     </div>
+  
+     <!-- Meet the Team -->
+     <div class="container my-4 bg-light p-4 border rounded">
+      <section>
+          <h2>Meet the Team</h2>
+          <p>Get to know our awesome team members!</p>
+
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="card">
+                      <img src="./images/IZUKU.png" class="card-img-top" alt="DEKU">
+                      <div class="card-body text-center">
+                          <h5 class="card-title">Izuku Midoriya</h5>
+                          <p class="card-text">SuperHero</p>
+                          <p>"A superhero who never gives up and always gives 120%."</p>
+                          <p>DEKU@UA.edu.com</p>
+                          <a href="#" class="btn btn-primary">Contact</a>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-md-4">
+                  <div class="card">
+                      <img src="./images/Ed-Sheeran.jpg" class="card-img-top" alt="Ed">
+                      <div class="card-body text-center">
+                          <h5 class="card-title">Ed Sheeran</h5>
+                          <p class="card-text">Musician</p>
+                          <p>The best composer and singer-songwriter of the 2000s.</p>
+                          <p>TheEddySheeran@servis.com</p>
+                          <a href="#" class="btn btn-primary">Contact</a>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-md-4">
+                  <div class="card">
+                      <img src="./images/Guillermo_del_Toro.jpg" class="card-img-top" alt="Guillermo Del Toro">
+                      <div class="card-body text-center">
+                          <h5 class="card-title">Guillermo Del Toro</h5>
+                          <p class="card-text">Film Director</p>
+                          <p>The horror expert with a unique vision of terrifying science fiction.</p>
+                          <p>DelToro@yahoo.com</p>
+                          <a href="#" class="btn btn-primary">Contact</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+       </section>
+     </div>
+
+     <!-- Horario semanal - forms -->
+     <div class="container my-4">
+      <section>
+        <h2>Weekly Schedule</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Description</th>
+                    <th>Place</th>
+                    <th>Type</th>
+                    <th>Notes</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2024-09-01</td>
+                    <td>09:00</td>
+                    <td>10:00</td>
+                    <td>Meeting with team</td>
+                    <td>Office</td>
+                    <td>Professional</td>
+                    <td>Discuss project progress</td>
+                    <td><img src="images/busy.png" alt="Busy" width="50px"></td>
+                </tr>
+                <tr>
+                    <td>2024-09-02</td>
+                    <td>12:00</td>
+                    <td>13:00</td>
+                    <td>Code review</td>
+                    <td>Online</td>
+                    <td>Professional</td>
+                    <td>Review new features</td>
+                    <td><img src="images/Free.png" alt="Available" width="50px"></td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+      </section>
+     </div>
+
+
+     <!-- Footer -->
+     <footer class="bg-dark text-white py-3">
+       <p>&copy; 2024 Juan Pablo Villaseñor Navares - All Rights Reserved.</p>
+     </footer>
+
+    </div>
+
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+     <!-- Script de Collapsible sidebar -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <script>
+     // Toggle sidebar visibility
+     const sidebarToggle = document.getElementById('sidebarToggle');
+     const sidebar = document.getElementById('sidebar');
+    
+     sidebarToggle.addEventListener('click', function() {
+        if (sidebar.style.display === 'none') {
+            sidebar.style.display = 'block';
+        } else {
+            sidebar.style.display = 'none';
+        }
+         });
+      </script>
+
+
+     <!--Script del dark mode-->
+     <script>
+     const toggleButton = document.getElementById('colorModeToggle');
+     toggleButton.addEventListener('click', () => {
+        // Alternar la clase del body
+        document.body.classList.toggle('bg-dark');
+        document.body.classList.toggle('text-white');
+
+        // Alternar colores de la navbar
+        const navbar = document.querySelector('.navbar');
+        navbar.classList.toggle('bg-dark');
+        navbar.classList.toggle('navbar-dark'); // Asegura que el texto de la navbar sea claro en modo oscuro
+
+        // Alternar colores de las secciones con fondo personalizado
+        const customSections = document.querySelectorAll('.container');
+        customSections.forEach(section => {
+            section.classList.toggle('bg-light');
+            section.classList.toggle('bg-dark');
+            section.classList.toggle('text-white');
+        });
+
+        // Alternar colores de las tarjetas
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.classList.toggle('bg-dark');
+            card.classList.toggle('text-white');
+        });
+
+        // Alternar el footer
+        const footer = document.querySelector('footer');
+        footer.classList.toggle('bg-dark');
+        footer.classList.toggle('text-white');
+        });
+        </script>
+
+     <!-- Bootstrap JS -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+     
+
+  
+</body>
+</html>

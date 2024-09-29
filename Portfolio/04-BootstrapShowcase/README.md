@@ -25,11 +25,11 @@ Select 5 elements from the following list and make a small demo of how would you
 
 ---
 
-- Color mode
-- Navbar with search field
-- Sticky footer
-- Collapsible sidebar
-- Drop downs with icon
+- Color mode ya
+- Navbar with search field ya 
+- Sticky footer ya
+- Collapsible sidebar ya
+- Drop downs with icon ya
 - Offcanvas content
 - Pagination on content
 - Complex modals
