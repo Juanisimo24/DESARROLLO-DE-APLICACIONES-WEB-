@@ -41,18 +41,34 @@ function flatlander(width, height, x, y, isHappy) {
     ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
     ctx.fillText(this.happyPoints, this.x, this.y + 5);
   };
+
   this.newPos = function (canvasWidth, canvasHeight) {
-    // TODO: Update the x, y position using the this.speedX and this.speedY
-    // values of the object. Make sure that when they reach an edge, they
-    // bounce back.
+  this.x += this.speedX;
+  this.y += this.speedY;
+
+  // Rebotar en los bordes del canvas
+  if (this.x <= 0 || this.x + this.width >= canvasWidth) {
+    this.speedX = -this.speedX;
+  }
+  if (this.y <= 0 || this.y + this.height >= canvasHeight) {
+    this.speedY = -this.speedY;
+  }
   };
+
   this.moreHappy = function () {
-    // TODO: increase the happyPoints value and check if the isHappy flag
-    // needs to be updated along with the image being displayed
+    this.happyPoints += 1;
+  if (this.happyPoints > 0 && !this.isHappy) {
+    this.isHappy = true;
+    this.image.src = happySrc;  // Cambia la imagen a "feliz"
+  }
   };
+
   this.lessHappy = function () {
-    // TODO: decrease the happyPoints value and check if the isHappy flag
-    // needs to be updated along with the image being displayed
+    this.happyPoints -= 1;
+    if (this.happyPoints <= 0 && this.isHappy) {
+      this.isHappy = false;
+      this.image.src = sadSrc;  // Cambia la imagen a "triste"
+    }
   };
   this.checkSurroundings = function (other) {
     var x = Math.pow(this.x - other.x, 2);

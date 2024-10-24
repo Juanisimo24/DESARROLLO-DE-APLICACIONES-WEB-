@@ -17,14 +17,23 @@ var getPrimeFactors = function (n) {
     return true;
   }
 
-  var i,
-    sequence = [];
-
+  var i, sequence = [];
+    for (i = 2; i <= n; i++) {
+        while (n % i === 0 && isPrime(i)) {
+            sequence.push(i);
+            n /= i;
+        }
+      } 
   //TODO: Check which numbers are factors of n and also check if
   // that number also happens to be a prime
-
   return sequence;
 };
+
+function displayPrimeFactors() {
+  var num = document.getElementById("num").value;
+  var factors = getPrimeFactors(parseInt(num, 10));
+  document.getElementById("pf").innerText = factors.join(", ");
+}
 
 // the prime factors for this number are: [ 2, 3, 5, 7, 11, 13 ]
 console.log(getPrimeFactors(30030));

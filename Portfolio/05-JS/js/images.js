@@ -46,7 +46,7 @@ function component(width, height, color, x, y, type) {
   this.y = y;
   // Declaration of function update
   this.update = function () {
-    ctx = myGameArea.context;
+    var ctx = myGameArea.context;
     // Option to draw the component as an image or as a square with a color
     if (type == "image") {
       ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
@@ -56,20 +56,22 @@ function component(width, height, color, x, y, type) {
     }
   };
   // Declaration of function newPos
+
+  // New position function
   this.newPos = function (canvasWidth, canvasHeight) {
-    // Sets the new position of the object with x,y coordinates
     this.x += this.speedX;
     this.y += this.speedY;
-    if (this.type == "image") {
-      if (this.x >= canvasWidth - this.width / 2 || this.x <= 0) {
-        //TODO: make the image bounce back when reaching the edges
-      }
-      if (this.y >= canvasHeight - this.height / 2 || this.y <= 0) {
-        //TODO: make the image bounce back when reaching the edges
+
+    // Bouncing logic: reverse direction if it hits the canvas borders
+    if (this.x >= canvasWidth - this.width || this.x <= 0) {
+      this.speedX = -this.speedX;  // Reverse the X direction
+    }
+    if (this.y >= canvasHeight - this.height || this.y <= 0) {
+      this.speedY = -this.speedY;  // Reverse the Y direction
       }
     }
   };
-}
+
 
 // Global function. Independent from any object
 function updateGameArea() {
@@ -80,17 +82,17 @@ function updateGameArea() {
 
 // Methods that control the movement of the object
 function moveup() {
-  myGamePiece.speedY -= 1;
+  myGamePiece.speedY -= 1; // Move up
 }
 
 function movedown() {
-  //TODO: implement the move down functionality
+  myGamePiece.speedY += 1;  // Move down
 }
 
 function moveleft() {
-  //TODO: implement the move left functionality
+  myGamePiece.speedX -= 1;  // Move left
 }
 
 function moveright() {
-  myGamePiece.speedX += 1;
+  myGamePiece.speedX += 1;  // Move right
 }

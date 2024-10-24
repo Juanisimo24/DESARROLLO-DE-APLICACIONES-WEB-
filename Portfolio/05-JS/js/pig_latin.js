@@ -2,32 +2,36 @@
 Pig Latin
 */
 
-function igpayAtinlay(str) {
-  // TODO: Initialize the word array properly
-  var returnArray = [],
-    wordArray = [];
-  // TODO: make sure that the output is being properly built to produce the desired result.
+/*Pig Latin*/
+function translateToPigLatin() {
+  var str = document.getElementById("txtVal").value;
+  var returnArray = [];
+  var wordArray = str.split(' ');
+
   for (var i = 0; i < wordArray.length; i++) {
-    var word = wordArray[i];
-    var beginning = word.charAt(0);
-
-    if (/[aeiouAEIOU]/.test(beginning)) {
-      returnArray.push(word);
-      continue;
-    }
-
-    for (var ii = 1; ii < word.length; ii++) {
-      if (/[aeiouAEIOU]/.test(word.charAt(ii))) {
-        break;
+      var word = wordArray[i];
+      var beginning = word.charAt(0);
+      if (/[aeiouAEIOU]/.test(beginning)) {
+          returnArray.push(word + 'way');
       } else {
-        beginning += word.charAt(ii);
+          var vowelIndex = -1;
+          for (var ii = 1; ii < word.length; ii++) {
+              if (/[aeiouAEIOU]/.test(word.charAt(ii))) {
+                  vowelIndex = ii;
+                  break;
+              }
+          }
+          if (vowelIndex !== -1) {
+              returnArray.push(word.slice(vowelIndex) + word.slice(0, vowelIndex) + 'ay');
+          } else {
+              returnArray.push(word + 'ay');
+          }
       }
-    }
   }
-  return returnArray.join(" ");
+  document.getElementById("pigLatLbl").innerText = returnArray.join(" ");
 }
 
 // Some examples of expected outputs
-console.log(igpayAtinlay("pizza")); // "izzapay"
-console.log(igpayAtinlay("apple")); // "appleway"
-console.log(igpayAtinlay("happy meal")); // "appyhay ealmay"
+console.log(translateToPigLatin("pizza")); // "izzapay"
+console.log(translateToPigLatin("apple")); // "appleway"
+console.log(translateToPigLatin("happy meal")); // "appyhay ealmay"
