@@ -1,3 +1,251 @@
+/* Estilo para el cuerpo del documento */
 body {
-  margin: 0;
+  font-family: 'Merriweather', serif;
+  background-color: #f0f8ff; /* Color de fondo */
+  text-align: center; /* Alineación centrada */
+}
+
+/* Estilo para todos los elementos del documento */
+* {
+  font-family: 'Merriweather', serif;
+}
+
+/* Estilo para el encabezado principal (h1) */
+h1 {
+  font-family: 'Sacramento', cursive;
+  color: #2c3e50; /* Ajusta este color según tu fondo */
+  font-size: 5.5rem;
+  margin: 50px;
+}
+
+/* Estilo para los encabezados de segundo nivel (h2) */
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  padding-bottom: 10px;
+  color: #2980b9; /* Color secundario para h2 */
+}
+
+/* Estilo para los encabezados de tercer nivel (h3) */
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #8e44ad; /* Tercer color para h3 */
+}
+
+/* Estilo para los encabezados de cuarto nivel (h4, h5, h6) */
+h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: #34495e; /* Un cuarto color para h4, h5, h6 */
+}
+
+/* Estilo para las líneas horizontales (hr) */
+hr {
+  border: none;
+  border-top: 6px dotted #EAF6F6;
+  width: 4%;
+  margin: 0 100px;
+}
+
+/* Estilo para los enlaces */
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #337ab7; /* Color por defecto */
+}
+
+a:hover {
+  color: green;
+}
+
+/* Estilo para las tablas */
+table {
+  width: 100%;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+/* Estilo para las imágenes */
+img {
+  max-width: 150%;
+  height: 150%;
+  border-radius: 50%; /* Bordes redondeados para todas las imágenes */
+}
+
+/* Ajuste para los logos */
+img.logo {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+}
+
+li{
+  list-style: none;
+}
+
+.flag {
+  border: none;
+  width: 50px;
+  height: auto;
+}
+
+/* Estilo para las secciones generales */
+.section {
+  padding: 20px;
+  margin: 20px auto;
+  background-color: #76acdc; /* Color de fondo principal */
+  border-radius: 10px;
+}
+
+/* Estilo para las secciones pares (fondo alternativo) */
+.even-section {
+  background-color: #dfe6e9; /* Color de fondo alternativo */
+}
+
+/* Estilos para la sección de "Meet the Team" */
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.column {
+  float: left;
+  width: 30%; /* Ajuste para que las columnas sean un poco más pequeñas */
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.container {
+  padding: 16px;
+  text-align: center;
+}
+
+.title {
+  color: grey;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px;
+  color: white;
+  background-color: #2980b9; /* Color principal del botón */
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+/* Ajustes para las imágenes dentro de las tarjetas */
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+/* Estilos generales del formulario */
+form {
+  border: 2px dashed #333; /* Borde punteado */
+  padding: 20px;
+  background-color: #f0f8ff; /* Fondo del formulario */
+  margin-top: 20px;
+}
+
+/* Estilos para las entradas del formulario */
+form {
+  border: 2px dashed #6ac5c5; /* Borde punteado */
+  padding: 20px;
+  background-color: #e0f7fa; /* Fondo del formulario */
+  border-radius: 15px; /* Bordes redondeados del formulario */
+}
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 15px; /* Bordes redondeados */
+  border: 1px solid #7ce7d3;
+  background-color: #5ba2a1; /* Fondo de los campos */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Cambiar el color de los botones */
+button, input[type="submit"] {
+  background-color: #6ac5c5;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: #447677;
+}
+
+/* Contenedor de la escena */
+.scene {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Ajusta la altura según sea necesario */
+  background-color: #87CEEB; /* Color de cielo */
+  overflow: hidden; /* Para ocultar las nubes fuera del contenedor */
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: flex-end; /* Alinea el contenido al fondo de la escena */
+}
+
+/* Montaña estática */
+.mountain {
+  position: static;
+  bottom: 0;
+  width: 400px;
+  height: 100px;
+ 
+}
+
+/* Nubes fijas */
+.cloud {
+  position: sticky;
+  top: 50px;
+  width: 120px;
+  height: 50px;
+  
+}
+
+.processed-image {
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #333;
+  border-radius: 10px;
 }
