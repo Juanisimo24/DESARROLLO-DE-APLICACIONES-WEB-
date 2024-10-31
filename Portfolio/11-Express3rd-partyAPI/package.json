@@ -1,0 +1,15 @@
+{
+    "name": "11-Express3rd-partyAPI",
+    "version": "1.0.0",
+    "description": "Weather app using Express and OpenWeatherMap API",
+    "main": "sample/app.js",
+    "dependencies": {
+        "body-parser": "^1.20.3",
+        "express": "^4.21.1"
+    },
+    "scripts": {
+        "start": "node sample/app.js"
+    },
+    "author": "",
+    "license": "ISC"
+}
