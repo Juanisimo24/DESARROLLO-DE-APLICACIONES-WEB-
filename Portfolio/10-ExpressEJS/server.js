@@ -1,19 +1,68 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+const path = require("path");
 const app = express();
-const https = require("https");
+const port = 3000;
+
 
 // TODO: configure the express server
+app.use(express.static(path.join(__dirname, "public")));
+app.set("view engine", "ejs");
+app.use(bodyParser.urlencoded({ extended: true }));
 
-const longContent =
-  "Lacus vel facilisis volutpat est velit egestas dui id ornare. Semper auctor neque vitae tempus quam. Sit amet cursus sit amet dictum sit amet justo. Viverra tellus in hac habitasse. Imperdiet proin fermentum leo vel orci porta. Donec ultrices tincidunt arcu non sodales neque sodales ut. Mattis molestie a iaculis at erat pellentesque adipiscing. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Odio euismod lacinia at quis risus sed vulputate odio ut. Cursus mattis molestie a iaculis at erat pellentesque adipiscing.";
+
 
 let posts = [];
-let name;
+let name= "";
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/html/index.html");
 });
 
-app.listen(3000, (err) => {
+app.get("/login", (req, res) => {
+  name = req.query.name || "Guest";
+  res.render("test", { name: name, method: "GET" });
+});
+
+app.post("/login", (req, res) => {
+  name = req.body.name || "Guest";
+  res.render("test", { name: name, method: "POST" });
+});
+
+app.post("/new-post", (req, res) => {
+  const newPost = {
+    id: posts.length + 1,
+    title: req.body.title,
+    content: req.body.content,
+  };
+  posts.push(newPost);
+  res.redirect("/home");
+});
+
+app.get("/home", (req, res) => {
+  if (!name) return res.redirect("/");
+  res.render("home", { name: name, posts: posts });
+});
+
+app.get("/post/:id", (req, res) => {
+  const post = posts.find(p => p.id === parseInt(req.params.id));
+  if (!post) return res.redirect("/home");
+  res.render("post", { post: post });
+});
+
+app.post("/edit-post/:id", (req, res) => {
+  const post = posts.find(p => p.id === parseInt(req.params.id));
+  if (post) {
+    post.content = req.body.content;
+  }
+  res.redirect("/home");
+});
+
+app.post("/delete-post/:id", (req, res) => {
+  posts = posts.filter(p => p.id !== parseInt(req.params.id));
+  res.redirect("/home");
+});
+
+app.listen(port, () => {
   console.log("Listening on port 3000");
 });

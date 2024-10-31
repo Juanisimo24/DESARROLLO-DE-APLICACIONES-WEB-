@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Post</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <h2><%= post.title %></h2>
+  <p><%= post.content %></p>
+  
+  <h3>Edit Post</h3>
+  <form action="/edit-post/<%= post.id %>" method="POST">
+    <textarea name="content" rows="4" required><%= post.content %></textarea>
+    <button type="submit">Update</button>
+  </form>
+
+  <form action="/delete-post/<%= post.id %>" method="POST" style="margin-top: 1em;">
+    <button type="submit" style="background-color: red; color: white;">Delete Post</button>
+  </form>
+  <%- include('partials/footer') %>
+</body>
+</html>
