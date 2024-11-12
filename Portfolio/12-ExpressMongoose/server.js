@@ -1,5 +1,6 @@
 // Importar las dependencias necesarias
 const express = require("express");
+
 const mongoose = require("mongoose");
 const csvParser = require("csv-parser");
 const fs = require("fs");
