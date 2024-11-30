@@ -1,0 +1,78 @@
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .card-img-top {
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #7f8c8d;
+  }
+  
+  button.mb-3 {
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.mb-3:hover {
+    background-color: #2980b9;
+  }
+  
+  form {
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  form label {
+    font-weight: bold;
+    color: #34495e;
+  }
+  
+  form .form-control {
+    border-radius: 5px;
+    border: 1px solid #bdc3c7;
+  }
+  
+  form button {
+    background-color: #1abc9c;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #16a085;
+  }
+  
+  .list-group-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ecf0f1;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .list-group-item strong {
+    color: #2c3e50;
+  }
+  
