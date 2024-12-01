@@ -1,5 +1,5 @@
 .gradient-background {
-  background: linear-gradient(300deg, #feffff, #070100, #ff4c68);
+  background: linear-gradient(300deg, #feffff, #070100, #010671);
   background-size: 180% 180%;
   animation: gradient-animation 18s ease infinite;
 }
@@ -17,3 +17,22 @@
     background-position: 0% 50%;
   }
 }
+
+.red-to-black-gradient {
+  background: linear-gradient(300deg, #ff0000, #000000, #ff0000);
+  background-size: 180% 180%;
+  animation: red-to-black-animation 18s ease infinite;
+}
+
+@keyframes red-to-black-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
