@@ -1,6 +1,21 @@
 body {
   text-align: center;
-  background-color: #011F3F;
+  background: linear-gradient(350deg, #7c02ff, #070100, #4a0171);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 #level-title {
