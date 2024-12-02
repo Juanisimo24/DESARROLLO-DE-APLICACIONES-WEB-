@@ -10,7 +10,6 @@ const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
 
 const app = express();
-
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
@@ -44,24 +43,57 @@ userSchema.plugin(findOrCreate);
 
 const User = new mongoose.model("User", userSchema);
 
-// TODO: Configure passport to allow google authentication
-// - Remember to use create strategy
-// - Configure the serialize user method
-// - Configure the deserialize user
-// - Configure the google strategy
-// * Remember to place the client and client secret in env variables
+// Configuración de passport para Google Authentication
+passport.use(User.createStrategy());
+
+passport.serializeUser(function (user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function (id, done) {
+  User.findById(id, function (err, user) {
+    done(err, user);
+  });
+});
+
+passport.use(
+  new GoogleStrategy(
+    {
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      callbackURL: "http://www.yourdomain.com/auth/google/secrets",
+      userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
+    },
+    function (token, tokenSecret, profile, done) {
+      User.findOrCreate({ googleId: profile.id }, function (err, user) {
+        return done(err, user);
+      });
+    }
+  )
+);
 
 app.get("/", (req, res) => {
   res.render("home");
 });
 
-// TODO: implement the "/auth/google" and "/auth/google/secrets"
-// paths to do Google based authentication
+app.get("/auth/google",
+  passport.authenticate("google", { scope: ["profile"] })
+);
+
+app.get("/auth/google/secrets",
+  passport.authenticate("google", { failureRedirect: "/login" }),
+  function (req, res) {
+    // Successful authentication, redirect to secrets.
+    res.redirect("/secrets");
+  }
+);
 
 app.get("/secrets", (req, res) => {
-  // TODO: Look for the user in the DB, if found
-  // Display the secrets page with the associated secret
-  res.render("secrets");
+  if (req.isAuthenticated()) {
+    res.render("secrets");
+  } else {
+    res.redirect("/login");
+  }
 });
 
 app
@@ -70,13 +102,21 @@ app
     res.render("login");
   })
   .post((req, res) => {
-    // TODO: Get the information from the login form,
-    // search for it in the DB, if user/password match,
-    // Authenticate the user in the request header, and then
-    // send to /secrets, else send error and back to home
-    console.log(req.body.username);
-    console.log(req.body.password);
-    res.redirect("/secrets");
+    const user = new User({
+      username: req.body.username,
+      password: req.body.password,
+    });
+
+    req.login(user, (err) => {
+      if (err) {
+        console.log(err);
+        res.redirect("/login");
+      } else {
+        passport.authenticate("local")(req, res, () => {
+          res.redirect("/secrets");
+        });
+      }
+    });
   });
 
 app
@@ -84,38 +124,54 @@ app
   .get((req, res) => {
     res.render("register");
   })
-  .post("/register", (req, res) => {
-    // TODO: Get the information from the register form and
-    // Save the information to the DB. Once saved authenticate
-    // in session and send to /secrets, if there is an error
-    // on the register process, show error and allow the user to
-    // register again.
-    console.log(req.body.username);
-    console.log(req.body.password);
-    res.redirect("/secrets");
+  .post((req, res) => {
+    User.register(
+      { username: req.body.username },
+      req.body.password,
+      (err, user) => {
+        if (err) {
+          console.log(err);
+          res.redirect("/register");
+        } else {
+          passport.authenticate("local")(req, res, () => {
+            res.redirect("/secrets");
+          });
+        }
+      }
+    );
   });
 
 app
   .route("/submit")
   .get((req, res) => {
-    // TODO: if the user is authenticated, show the submit page,
-    // else redirect to login page
-    res.render("submit");
+    if (req.isAuthenticated()) {
+      res.render("submit");
+    } else {
+      res.redirect("/login");
+    }
   })
   .post((req, res) => {
-    console.log(req.body.secret);
-    // Once the user is authenticated and their session gets saved,
-    // their user details are saved to req.user.
-    // console.log(req.user.id);
-    // TODO: Retrieve the document representing the current user
-    // and save the associated secret with it.
-    res.redirect("/secrets");
+    User.findById(req.user.id, (err, foundUser) => {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser) {
+          foundUser.secret = req.body.secret;
+          foundUser.save(() => {
+            res.redirect("/secrets");
+          });
+        }
+      }
+    });
   });
 
 app.get("/logout", (req, res) => {
-  // TODO: Logout the user from the session and send it back
-  // to root path.
-  res.redirect("/");
+  req.logout((err) => {
+    if (err) {
+      console.log(err);
+    }
+    res.redirect("/");
+  });
 });
 
 app.listen(3000, () => {
