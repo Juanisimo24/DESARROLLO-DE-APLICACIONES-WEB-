@@ -1,21 +1,35 @@
-<%- include("header") -%>
+<%- include("header") %>
 
-  <div class="box" id="heading">
-    <h1> <%= listTitle %> </h1>
-  </div>
+<h1><%= listTitle %></h1>
+<link rel="stylesheet" href="../public/css/styles.css">
 
-  <div class="box">
-    <% for (let i=0; i<newListItems.length; i++) { %>
-      <div class="item">
-        <input type="checkbox">
-        <p><%=  newListItems[i]  %></p>
-      </div>
-      <% } %>
+<!-- Formulario para añadir una nueva tarea -->
+<form action="/" method="POST">
+    <input type="text" name="task" placeholder="Nueva tarea" required>
+    <input type="hidden" name="list" value="<%= listTitle %>">
+    <button type="submit">Añadir</button>
+</form>
 
-      <form class="item" action="/" method="post">
-        <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
-        <button type="submit" name="list">+</button>
-      </form>
-  </div>
+<!-- Lista de tareas -->
+<ul>
+    <% tasks.forEach(task => { %>
+        <li>
+            <form action="/delete" method="POST" style="display: inline;">
+                <input type="hidden" name="taskId" value="<%= task._id %>">
+                <input type="hidden" name="listName" value="<%= listTitle %>">
+                <button type="submit">✔</button>
+            </form>
+            <%= task.name %>
+        </li>
+    <% }); %>
+</ul>
 
-<%- include("footer") -%>
+<!-- Lista de enlaces a otras listas -->
+<h2>Otras listas</h2>
+<ul>
+    <% otherLists.forEach(listName => { %>
+        <li><a href="/<%= listName %>"><%= listName %></a></li>
+    <% }); %>
+</ul>
+
+<%- include("footer") %>
